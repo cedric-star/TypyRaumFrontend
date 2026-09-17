@@ -137,12 +137,11 @@ async function handleDelete(id: string) {
 
 <template>
   <div class="lister-wrapper">
-    <p class="mini-heading">Geometries</p>
-    <div v-if="authStore.role==='ADMIN'">
-      <button @click="toggleView" class="input-button-primary-small">
-        See all locations as {{ view === "ADMIN" ? "User" : "Admin" }}
+    <p class="mini-heading">Geometries by: {{ authStore.username }}</p>
+      <button v-if="authStore.role==='ADMIN'" @click="toggleView" class="input-button-primary-small">
+        <div v-if="view === 'USER'">See all locations</div>
+        <div v-else>See locations as User</div>
       </button>
-    </div>
     <div class="option-lister">
       <button @click="handleCreate" class="input-button-primary-small">Create new geometry</button>
     </div>

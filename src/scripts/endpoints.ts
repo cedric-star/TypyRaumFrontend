@@ -105,7 +105,6 @@ export async function getGeometries(jwtToken: string): Promise<object> {
 }
 
 export async function getGeometriesById(jwtToken: string, userId: string): Promise<object> {
-    console.error("dinsfldnslöjf");
     const response = await fetch(`${api.locations}/${userId}`, {
         method: 'GET',
         headers: {

@@ -1,16 +1,16 @@
-import {getGeometries} from "@/scripts/endpoints.ts";
+import {getGeometries, getGeometriesById} from "@/scripts/endpoints.ts";
 import {useAuthStore} from "@/stores/userAuth.ts";
 import {useGeoStore} from "@/stores/geometries.ts";
 import {useStateStore} from "@/stores/internalstates.ts";
 
 
-export async function loadGeoms() {
+export async function loadGeoms(getAll = false) {
 
     const authStore = useAuthStore();
     const geoStore = useGeoStore();
     const stateStore = useStateStore();
 
-    const resultJson = await getGeometries(authStore.jwt)
+    const resultJson = getAll ? await getGeometries(authStore.jwt) : await getGeometriesById(authStore.jwt, authStore.userid);
     if(resultJson && Array.isArray(resultJson)) {
         for (const geometry of geoStore.geometries) {
             const id = "" + geometry.id;

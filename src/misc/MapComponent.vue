@@ -3,7 +3,7 @@
 import 'maplibre-gl/dist/maplibre-gl.css'
 import {onMounted, onUnmounted, ref, shallowRef} from "vue";
 import {useGeoStore} from "@/stores/geometries.ts";
-import {getGeometries} from "@/scripts/endpoints.ts";
+import {getGeometriesById} from "@/scripts/endpoints.ts";
 import {useAuthStore} from "@/stores/userAuth.ts";
 import pinIcon from "@/assets/icons/map_pin_green.png";
 import {useStateStore} from "@/stores/internalstates.ts";
@@ -87,7 +87,7 @@ onMounted(async () => {
       console.error('Failed to load icon:', err);
     }
 
-    const resultJson = await getGeometries(authStore.jwt)
+    const resultJson = await getGeometriesById(authStore.jwt, authStore.userid)
     if(resultJson && Array.isArray(resultJson)) {
       geoStore.geometries.splice(0, geoStore.geometries.length);
       for(const geometry of resultJson) {

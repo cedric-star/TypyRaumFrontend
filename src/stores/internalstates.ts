@@ -19,7 +19,7 @@ export const useStateStore = defineStore("state", () => {
     const placeGeoMode = ref(false);
     const placedPoints = ref<maplibregl.LngLat[]>([]);
     const selectedFunc = ref<string>("")
-    const selectedGeoms = ref<number[]>([])
+    const selectedGeoms = ref<string[]>([])
     const selectFuncGeomMode = ref(false);
 
     return { createMode, editMode, openEditWindow, createGeomType, selectedGeoType, placeGeoMode, placedPoints,

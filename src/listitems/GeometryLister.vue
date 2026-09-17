@@ -15,9 +15,10 @@ import type {
   Polygon
 } from 'geojson';
 import {useStateStore} from "@/stores/internalstates.ts";
-import {executeGISFunc, sendDeleteGeometry} from "@/scripts/endpoints.ts";
+import {executeGISFunc, getGeometries, sendDeleteGeometry} from "@/scripts/endpoints.ts";
 import {useAuthStore} from "@/stores/userAuth.ts";
 import {loadGeoms} from "@/scripts/geom-funcs.ts";
+import {ref} from "vue";
 
 const geoStore = useGeoStore();
 const stateStore = useStateStore();
@@ -63,7 +64,7 @@ async function handleGISResult(result: GISResult | unknown) {
   }
 }
 
-async function handleGeomClicked(id: number) {
+async function handleGeomClicked(id: string) {
   if(stateStore.selectFuncGeomMode) {
     const added = await pushGeomToStore(id);
     if(!added) return;
@@ -81,7 +82,7 @@ async function handleGeomClicked(id: number) {
   }
 }
 
-async function pushGeomToStore(id: number): Promise<boolean> {
+async function pushGeomToStore(id: string): Promise<boolean> {
   if(stateStore.selectedGeoms[stateStore.selectedGeoms.length - 1] == id) return false;
   if(stateStore.selectedGeoms.includes(id)) {
     stateStore.selectedGeoms.splice(stateStore.selectedGeoms.indexOf(id), 1);
@@ -93,7 +94,7 @@ async function pushGeomToStore(id: number): Promise<boolean> {
   }
 }
 
-function jumpToMapLocation(id: number) {
+function jumpToMapLocation(id: String) {
   const geom = geoStore.geometries.find(geometry => geometry.id === id);
 
   if(!geom) return;
@@ -111,7 +112,19 @@ function handleCreate() {
   stateStore.openEditWindow = true;
 }
 
-async function handleDelete(id: number) {
+const view = ref<string>("USER");
+function toggleView() {
+  if (view.value == "USER") {
+    loadGeoms(true);
+    view.value = "ADMIN";
+  }
+  else if (view.value == "ADMIN") {
+    loadGeoms();
+    view.value = "USER";
+  }
+}
+
+async function handleDelete(id: string) {
   var result = confirm("Are you sure you want to delete this geometry? This action cannot be undone.");
   if (!result) {
     return;
@@ -125,6 +138,11 @@ async function handleDelete(id: number) {
 <template>
   <div class="lister-wrapper">
     <p class="mini-heading">Geometries</p>
+    <div v-if="authStore.role==='ADMIN'">
+      <button @click="toggleView" class="input-button-primary-small">
+        See all locations as {{ view === "ADMIN" ? "User" : "Admin" }}
+      </button>
+    </div>
     <div class="option-lister">
       <button @click="handleCreate" class="input-button-primary-small">Create new geometry</button>
     </div>

@@ -7,8 +7,8 @@ const props = defineProps<{
 }>()
 
 const emit = defineEmits<{
-  geomChosen: [value: number],
-  geomDelete: [value: number]
+  geomChosen: [value: string],
+  geomDelete: [value: string]
 }>()
 
 </script>
@@ -17,7 +17,7 @@ const emit = defineEmits<{
 <div class="list-item-wrapper">
   <div @click="$emit('geomChosen', props.geom.id)" class="info-wrapper">
     <p class="list-item-title">
-      {{props.geom.title}} (#{{props.geom.id}})
+      {{props.geom.title}}
     </p>
     <p class="list-item-text">
       Beschreibung: {{props.geom.description}}

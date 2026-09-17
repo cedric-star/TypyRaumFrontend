@@ -104,7 +104,25 @@ export async function getGeometries(jwtToken: string): Promise<object> {
     return await response.json();
 }
 
-export async function executeGISFunc(jwtToken: string, name: string, inputs: number[]): Promise<object> {
+export async function getGeometriesById(jwtToken: string, userId: string): Promise<object> {
+    console.error("dinsfldnslöjf");
+    const response = await fetch(`${api.locations}/${userId}`, {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${jwtToken}`,
+        },
+    })
+
+    if (!(response.ok) ) {
+        const errorBody = await response.json().catch(() => null);
+        throw new Error(`Err (${response.status}): ` + response.statusText);
+    }
+
+    return await response.json();
+}
+
+export async function executeGISFunc(jwtToken: string, name: string, inputs: string[]): Promise<object> {
     const response = await fetch(api.gis, {
         method: 'POST',
         headers: {

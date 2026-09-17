@@ -1,0 +1,211 @@
+
+.input-field {
+    border: var(--border-thickness-std) solid var(--color-secondary-container-border);
+    border-radius: var(--border-radius-std);
+    padding: var(--spacing-small);
+    width: 100%;
+    margin-bottom: var(--spacing-small);
+    font-size: var(--font-size-std);
+    height: 3rem;
+    background-color: var(--color-secondary-container-bg);
+    color: var(--color-secondary-container-text);
+}
+
+.info-icon-container {
+    position: relative;
+    display: inline-block;
+}
+
+.info-text {
+    position: absolute;
+    color: var(--color-secondary-container-text);
+    background: var(--color-secondary-container-bg-translucent);
+    border-radius: var(--border-radius-thin);
+    border: var(--border-thickness-std) solid var(--color-secondary-container-border);
+    padding: 2px 5px;
+    width: 10rem;
+    text-align: center;
+    visibility: hidden;
+}
+
+.info-icon-container:hover .info-text {
+    visibility: visible;
+}
+
+.input-button-primary {
+    border: var(--border-thickness-std) solid var(--color-secondary-container-border);
+    border-radius: var(--border-radius-std);
+    padding: var(--spacing-small);
+    margin-bottom: var(--spacing-small);
+    font-size: var(--font-size-std);
+    width: 5rem;
+    height: 3rem;
+    background-color: var(--color-secondary-container-bg-translucent);
+    color: var(--color-secondary-container-text);
+    transition-duration: var(--transition-time-std);
+}
+
+.input-button-primary-small {
+    border: var(--border-thickness-std) solid var(--color-secondary-container-border);
+    border-radius: var(--border-radius-thin);
+    padding: var(--spacing-mini);
+    margin-bottom: var(--spacing-mini);
+    font-size: var(--font-size-std);
+    height: 2rem;
+    background-color: var(--color-secondary-container-bg-translucent);
+    color: var(--color-secondary-container-text);
+    transition-duration: var(--transition-time-std);
+}
+
+.input-button-tertiary {
+    border: var(--border-thickness-std) solid var(--color-tertiary-container-border);
+    border-radius: var(--border-radius-std);
+    padding: var(--spacing-mini);
+    font-size: var(--font-size-std);
+    width: 100%;
+    height: 100%;
+    background-color: var(--color-tertiary-container-bg-translucent);
+    color: var(--color-tertiary-container-text);
+    transition-duration: var(--transition-time-std);
+}
+
+.input-button-tertiary-unavailable {
+    border: var(--border-thickness-std) solid var(--color-error-container-border);
+    border-radius: var(--border-radius-std);
+    padding: var(--spacing-mini);
+    font-size: var(--font-size-std);
+    width: 100%;
+    height: 100%;
+    background-color: var(--color-error-container-bg);
+    color: var(--color-error-text);
+    transition-duration: var(--transition-time-std);
+}
+
+.input-button-primary:hover  {
+    background-color: var(--color-secondary-container-bg);
+    cursor: pointer;
+}
+
+.input-button-primary-small:hover {
+    background-color: var(--color-secondary-container-bg);
+    cursor: pointer;
+}
+
+.input-button-tertiary:hover {
+    background-color: var(--color-tertiary-container-bg);
+    cursor: pointer;
+}
+
+.flex-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.error-msg {
+    color: var(--color-error-text);
+    font-size: var(--font-size-std);
+    margin-bottom: var(--spacing-small);
+}
+.list-item-wrapper {
+    border: var(--border-thickness-thin) solid var(--color-secondary-container-border);
+    border-radius: var(--border-radius-thin);
+    color: var(--color-secondary-container-text);
+    background: var(--color-secondary-container-bg-translucent);
+    display: flex;
+    flex-direction: column;
+    padding: var(--spacing-mini);
+    padding-left: var(--spacing-small);
+    padding-right: var(--spacing-small);
+    margin-bottom: var(--spacing-small);
+    width: 100%;
+}
+
+.list-item-wrapper:hover {
+    background: var(--color-secondary-container-bg);
+    cursor: pointer;
+}
+
+.list-item-wrapper-selected {
+    background: var(--color-secondary-container-bg);
+}
+
+.list-item-text {
+    font-size: var(--font-size-small);
+}
+
+.list-item-title {
+    font-weight: bold;
+    font-size: var(--font-size-std);
+}
+
+.lister-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: var(--spacing-medium);
+    background-color: var(--color-primary-container-bg-translucent);
+    border: var(--border-thickness-thin) solid var(--color-secondary-container-border);
+    flex: 1;
+    min-height: 0;
+    width: 100%;
+}
+
+.list-wrapper {
+    overflow-y: scroll;
+    display: block;
+    flex: 1;
+    min-height: 0;
+    width: 100%;
+}
+
+.heading {
+    font-size: var(--font-size-heading);
+}
+
+.heading {
+    font-size: var(--font-size-mid);
+}
+
+.option-lister {
+    font-size: var(--font-size-std);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    padding: var(--spacing-mini);
+}
+
+.dropdown-wrapper {
+    padding: var(--spacing-small);
+    background-color: var(--color-primary-container-bg-translucent);
+    border: var(--border-thickness-thin) solid var(--color-secondary-container-border);
+    border-radius: var(--border-radius-thin);
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+}
+
+.dropdown-option {
+    padding: var(--spacing-mini);
+    font-size: var(--font-size-small);
+    background-color: var(--color-primary-container-bg-translucent);
+    border: var(--border-thickness-thin) solid var(--color-secondary-container-border);
+    border-radius: var(--border-radius-thin);
+}
+
+.dropdown-option:hover {
+    background-color: var(--color-primary-container-bg);
+    cursor: pointer;
+}
+
+.polygon-point-marker {
+    font-size: var(--font-size-mid);
+    background-color: var(--color-tertiary-container-bg-translucent);
+    border: var(--border-thickness-thin) solid var(--color-tertiary-container-border);
+    border-radius: var(--border-radius-std);
+    padding: var(--spacing-mini);
+}

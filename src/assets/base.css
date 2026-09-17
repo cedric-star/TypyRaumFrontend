@@ -1,0 +1,53 @@
+/* color palette from <https://github.com/vuejs/theme> */
+@import './colors.css';
+@import './size-vals.css';
+@import './elements.css';
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  font-weight: normal;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+main {
+    height: 100dvh;
+    width: 100dvw;
+    display: flex;
+    flex-grow: 1;
+    justify-content: center;
+    flex-direction: column;
+    position: relative;
+    min-height: 100dvh;
+    transition:
+            color 0.5s,
+            background-color 0.5s;
+    line-height: 1.6;
+    font-family:
+            Inter,
+            -apple-system,
+            BlinkMacSystemFont,
+            'Segoe UI',
+            Roboto,
+            Oxygen,
+            Ubuntu,
+            Cantarell,
+            'Fira Sans',
+            'Droid Sans',
+            'Helvetica Neue',
+            sans-serif;
+    font-size: 15px;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    color: var(--color-primary-text);
+    background-image: url('@/assets/images/halle-blur-bg.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+}

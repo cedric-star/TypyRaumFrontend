@@ -1,0 +1,31 @@
+:root {
+    --font-size-small: 8pt;
+    --font-size-std: 12pt;
+    --font-size-mid: 14pt;
+    --font-size-heading: 20pt;
+
+    --spacing-mini: 0.25rem;
+    --spacing-small: 0.5rem;
+    --spacing-medium: 1rem;
+    --spacing-large: 1rem;
+    --spacing-very-large: 2rem;
+    --spacing-huge: 3rem;
+
+    --footer-height: 3.5rem;
+    --footer-logo-height: 2.5rem; /*Immer kleiner als footer-height halten*/
+
+    --header-height: 4rem;
+    --header-button-height: 2.75rem;
+
+    --border-radius-thin: 5px;
+    --border-radius-std: 12px;
+    --border-thickness-thin: 1.5px;
+    --border-thickness-std: 3px;
+
+    --card-top-pad: 1.5rem;
+    --card-sides-pad: 1rem;
+    --card-bottom-pad: 1rem;
+
+    --transition-time-std: 0.25s;
+    --transition-time-long: 0.5s;
+}

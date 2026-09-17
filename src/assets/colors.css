@@ -1,0 +1,30 @@
+:root {
+    --color-background: #fbfadb;
+
+    --color-primary: #56f47b;
+    --color-primary-bg: #776b31;
+    --color-primary-text: #2c302c;
+    --color-primary-container-border: #8deca3;
+    --color-primary-container-bg: rgb(216, 253, 227);
+    --color-primary-container-bg-translucent: rgba(216, 253, 227, 0.6);
+    --color-primary-container-text: #184222;
+
+    --color-secondary-bg: #fff5c2;
+    --color-secondary-text: #2c2c29;
+    --color-secondary-container-border: #81b7f4;
+    --color-secondary-container-bg: #c9def8;
+    --color-secondary-container-bg-translucent: rgba(201, 222, 248, 0.6);
+    --color-secondary-container-text: #132c4a;
+
+    --color-tertiary-bg: #fff5c2;
+    --color-tertiary-text: #2c2c29;
+    --color-tertiary-container-border: #efb930;
+    --color-tertiary-container-bg: #fbf4d0;
+    --color-tertiary-container-bg-translucent: rgba(246, 205, 153, 0.6);
+    --color-tertiary-container-text: #2c2c29;
+
+    --color-error-container-border: #e61d14;
+    --color-error-container-bg: #efc9bf;
+    --color-error-container-bg-translucent: rgba(239, 201, 191, 0.6);
+    --color-error-text: #dc1515;
+}
